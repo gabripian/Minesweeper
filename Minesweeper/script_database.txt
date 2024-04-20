@@ -1,0 +1,63 @@
+BEGIN;
+
+
+  CREATE DATABASE `pratofiorito`;
+ 
+
+COMMIT;
+
+
+
+USE `pratofiorito`;
+
+
+
+CREATE TABLE `accounts` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(50) NOT NULL,
+ `email` varchar(100) NOT NULL,
+ `nation` varchar(50) NOT NULL,
+ `password` varchar(255) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE `stats` (
+ `code` int(11) NOT NULL AUTO_INCREMENT,
+ `games` int(11) NOT NULL,
+ `percentage` double NOT NULL,
+ `points` int(11) NOT NULL,
+ `user` int(11) NOT NULL,
+ `wins` int(11) NOT NULL,
+ PRIMARY KEY (`code`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+
+
+
+INSERT INTO `pratofiorito`.`accounts` (`id`, `username`, `email`, `nation`, `password`) VALUES (1, 'gabripian', 'lamiamail@gmail.com', 'Italia', '$2y$10$dUzc6/EZZ.M9av6cXRNe6uYY1zj9mapNSNUbTjYDVJKCEIvr4q6mm');
+INSERT INTO `pratofiorito`.`accounts` (`id`, `username`, `email`, `nation`, `password`) VALUES (3, 'darkGreen', 'dave@gmail.com', 'England', '$2y$10$6uQhVaRJUc/RKcIDPQ4Y2.jDnUsw4Kzm4YAYndI4f76Ce4SeyfhP2');
+INSERT INTO `pratofiorito`.`accounts` (`id`, `username`, `email`, `nation`, `password`) VALUES (5, 'Real77', 'myMail@gmail.com', 'Portugal', '$2y$10$.tQMJg1YWlDBsqYyCO9HXeLaMHeZ1D2gXiyMRMzRQP4SAFkq5Ctz.');
+INSERT INTO `pratofiorito`.`accounts` (`id`, `username`, `email`, `nation`, `password`) VALUES (6, 'angelo', 'angeloverdi1@gmail.com', 'Italia', '$2y$10$SHlxkQZ4pRRTxtfOhvt8Bumg9VnhmPjL6BxDjE8MlpPZu8vO4JEui');
+INSERT INTO `pratofiorito`.`accounts` (`id`, `username`, `email`, `nation`, `password`) VALUES (8, 'David8', 'dave@gmail.com', 'Portugal', '$2y$10$/ugM5MtgNcQ2Uju9KIblzeuTG/oZFSBzRlWE7SxCI/mf8vrVspNRu');
+INSERT INTO `pratofiorito`.`accounts` (`id`, `username`, `email`, `nation`, `password`) VALUES (10, 'TheWin', 'email@gmail.com', 'Italia', '$2y$10$75dzTSqbEfuuL5fNb7ZoQeX7FKljRPuwL.juQzE9MHmq99SuLcgtK');
+
+/*utente:gabripian password:gabripian28*/
+/*utente:darkGreen password:lightgreen*/
+/*utente:Real77 password:myPass*/
+/*utente:angelo password:angel22*/
+/*utente:David8 password:dav888*/
+/*utente:TheWin password:password*/
+
+
+INSERT INTO `pratofiorito`.`stats` (`code`, `games`, `percentage`, `points`, `user`, `wins`) VALUES ('1', '297', '28.95622895622896', '915', '1', '86');
+INSERT INTO `pratofiorito`.`stats` (`code`, `games`, `percentage`, `points`, `user`, `wins`) VALUES ('2', '5', '40', '20', '3', '2');
+INSERT INTO `pratofiorito`.`stats` (`code`, `games`, `percentage`, `points`, `user`, `wins`) VALUES ('3', '6', '50', '30', '6', '3');
+INSERT INTO `pratofiorito`.`stats` (`code`, `games`, `percentage`, `points`, `user`, `wins`) VALUES ('4', '1', '100', '10', '10', '1');
+INSERT INTO `pratofiorito`.`stats` (`code`, `games`, `percentage`, `points`, `user`, `wins`) VALUES ('5', '2', '50', '10', '5', '1');
+
+
+
+

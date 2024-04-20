@@ -1,0 +1,278 @@
+/*allineamento dei bottoni registrati e accedi*/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+/*barra laterale in caso di overflow della pagina*/
+html {
+    overflow-y: scroll; 
+}
+
+body {
+    background-color:#36393f;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/*stile del titolo della pagina*/
+.head{
+  color: #72767d;
+  font-family:serif;
+  font-weight:800;
+}
+
+/*stile della form di registrazione/autenticazione*/
+.form {
+    background:rgba(19, 35, 47, 0.9);
+    padding: 40px;
+    max-width:600px;
+    margin:40px auto;
+    border-radius:4px;
+    box-shadow:0 4px 4px 4px #101d28;
+    user-select : none;
+}
+/*stile all'interno della form*/
+.tab-group {
+    list-style:none;
+    padding:0;
+    margin:0 0 40px 0;
+}
+
+.tab-group:after {
+    
+    content: "";
+    display: table;
+    clear: both;
+
+}
+/*nasconde la pagina di autenticazione*/
+.tab-content{
+    display:none;
+}
+
+/*intestazioni all'interno della form'*/
+h1 {
+    text-align:center;
+    color:#ffffff;
+    font-weight:300;
+    margin:0 0 40px;
+}
+
+/*etichetta dei campi della form*/
+label {
+    
+    position:absolute;
+    transform:translateY(6px);          /*si centra l'etichetta al centro del campo di input'*/
+    left:13px;
+    color:rgba(255, 255, 255, 0.5);
+    transition:all 0.25s ease;          /*la traslazione non è immediata*/
+    pointer-events: none;               /*utile per chè altrimenti cliccando su di essa il campo non prenderebbe il focus*/
+    font-size:22px;
+
+}
+/*si attiva scrivendo in un campo*/
+.label-active{
+    
+    transform:translateY(50px);           /*si trasla in basso l'etichetta scrivendo dentro al campo*/
+    left:2px;
+    font-size:14px;
+    color:#ffffff;
+
+}
+/*classe dell'asterisco'*/
+.req {
+    margin:2px;
+    color:#1ab188;
+}
+/*stile del campo di input*/
+input {
+    
+    font-size:22px;
+    display:block;
+    width:100%;
+    height:100%;
+    padding:5px 10px;
+    background:none;
+    background-image:none;
+    border:1px solid #a0b3b0;
+    color:#ffffff;
+    border-radius:0;
+    transition:border-color .25s ease, box-shadow .25s ease;        
+
+}
+/*se si dà il focus al campo il bordo si evidenzia*/
+input:focus {
+    
+    outline:0;
+    border-color:#1ab188;
+}
+
+/*fondamentale per tenere il contenuto della form al suo posto*/
+.field-wrap {
+    position:relative;
+    margin-bottom:40px;
+
+}
+/*stile dei bottoni di sottomissione della form*/
+.button {
+    
+    border:0;
+    outline:none;
+    border-radius:0;
+    padding:15px 0;
+    font-size:2rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    background:#1ab188;
+    color:#ffffff;
+    transition:all.5s ease;
+    cursor:pointer;
+
+}
+
+.button:hover, .button:focus {
+    background:#149773;
+    cursor:pointer;
+}
+
+.button-block {
+    display:block;
+    width:100%;
+}
+
+/*stile del bottone accedi o registrati attivo*/
+.button1{
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    background:#1ab188;
+    color:#ffffff;
+    font-size:20px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+}
+
+
+.button1:hover, .button1:focus {
+    background:#149773;
+    color:#ffffff;
+    cursor:pointer;
+}
+
+
+/*stile del bottone accedi o registrati non attivo*/
+.button2{
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    background:#435359;
+    color:#99acaa;
+    font-size:20px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+}
+
+.button2:hover, .button2:focus {
+    background:#149773;
+    color:#ffffff;
+    cursor:pointer;
+}
+
+/*select di selezionamento della nazione*/
+select {
+    display:block;
+    width:100%;
+    height:100%;
+    color: white;
+    font-size:22px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0;
+    background:none;
+    border:1px solid #a0b3b0;
+    appearance: none;
+    padding:5px 10px;
+    -webkit-appearance: none; /*utile altrimenti i browser mostrerebbero la loro freccia di default*/
+    -moz-appearance: none;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/*stile delle vaie opzioni della select*/
+.option1{
+
+    color: #a0b3b0;
+    font-size:20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0;
+    background:none;
+    border:1px solid #1ab188;
+    appearance: none;
+
+}
+/*stile dell'icone del select'*/
+.select-icon {
+    position: absolute;
+    top:3px;
+    right: 5px;
+    width: 8%;
+    height: 85%;
+    pointer-events: none;
+    border: 2px solid #a0b3b0;
+    padding-left: 6px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    
+.select-icon svg.icon {
+    transition: fill 0.3s ease;
+    fill: #1ab188;
+}
+
+select:hover,
+select:focus {
+    color: #a0b3b0;
+    background-color: rgb(19, 35, 47);
+    border-color: #1ab188;
+}
+select:hover ~ .select-icon,
+select:focus ~ .select-icon {
+    background-color: rgb(19, 35, 47);
+    border-color: #1ab188;
+}
+select:hover ~ .select-icon svg.icon,
+select:focus ~ .select-icon svg.icon {
+    fill: #a0b3b0;
+}
+/*colora la stringa di rosso se si verificano errori*/
+.error{
+
+    color:rgba(255, 255, 255, 0.5);
+}
+/*errore del form d'accesso*/
+.error1{
+    color: #ff6f61;
+}
+/*pone a destra la scritta 'questo campo è obbligatorio'*/
+.required{
+
+    direction: rtl;
+
+}
+/*classe dell'avviso di utente non disponibile'*/
+.taken{
+    direction: rtl;
+    color: #ff6f61;
+    margin-top:10px;
+}
+/*avviso della registrazione avvenita con successo*/
+.access{
+    color:white;
+    font-weight:700;
+    font-size:22px;
+    margin-left:26%;
+}

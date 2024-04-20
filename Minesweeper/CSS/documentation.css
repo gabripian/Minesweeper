@@ -1,0 +1,77 @@
+/*link alla pagina di documentazione*/
+.doc{
+    margin-left:-5px;
+    margin-top:27px;
+    display:inline;
+    position:absolute;
+}
+/*link di ritorno dalla pagina di documentazione*/
+.doc1{
+    margin-left:75%;    
+    font-size: 1.5vw;
+    
+}
+.doc:link,.doc1:link {
+  color: #1ab188;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.doc:visited,.doc1:visited {
+  color: #1ab188;
+  background-color: transparent;
+  text-decoration: none;
+}
+.doc:hover,.doc1:hover {
+  color: #00b3b3;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.doc:active,.doc1:active {
+  color: #66ff33;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
+body{
+    
+    background-color:#36393f;
+    font-family: 'Titillium Web', sans-serif;
+    
+}
+/*titolo della pagina*/
+.h1{
+  text-align:center;
+  color: #72767d;
+  font-family:serif;
+  font-weight:800;
+  font-size: 2.5vw;
+  user-select : none;
+}
+/*div contenente il testo della documentazione, dimensione in vw perchè si riduca il testo riducendo la pagina*/
+.explain{
+      color:#1ab188;
+      border: 4px solid #1ab188;
+      border-radius: 25px;
+      width:75%;
+      height: 75%;
+      text-align: left;
+      border-style: inset;
+      margin-left: 10%;
+      padding-left:1%;
+      background-color: rgba(19, 35, 47, 0.9);
+      font-size: 1.5vw;
+      font-weight:300;
+      font-family: serif;
+      user-select : none;
+}
+/*stile del testo all'interno dei pre nel div*/
+pre{
+    
+    color:white;  
+    text-align: left;
+    margin-left: 1%;
+    font-size: 1.1vw;
+    font-family: serif;
+    user-select : none;
+}
